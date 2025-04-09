@@ -1,5 +1,5 @@
 import re
-from major_grouping import major_map  # Import the major_map from map.py
+from Filtering.major_grouping import major_mapv1  # Import the major_map from map.py
 # Load the major_map from map.py
 
 # Load the majors from major.txt
@@ -14,9 +14,9 @@ def normalize_major(major):
 
 normalized_majors = set(normalize_major(major) for major in majors)
 
-# Flatten the major_map keywords for comparison
+# Flatten the major_mapv1 keywords for comparison
 mapped_keywords = {}
-for category, keywords_list in major_map.items():
+for category, keywords_list in major_mapv1.items():
     for keyword in keywords_list:
         mapped_keywords[keyword] = category
 

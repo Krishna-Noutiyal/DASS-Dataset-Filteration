@@ -25,3 +25,12 @@ This dataset removes several columns from the original dataset the removed colum
 - source
 - screensize
 
+
+### dass_filtered_major_spec_rem.csv
+---
+All of the filteration done in `dass_filtered_col_rem.csv` is also done in this dataset. In addition to that the `major` column is also filtered for any **special characters**. This ensures that the dataset maintains a high level of data quality and consistency.
+
+
+### categorized_datav1.csv
+---
+All of the filteration done in `dass_filtered_major_spec_rem.csv` is also done in this dataset. In addition the `major` column grouped into similar majors. A new column `major_catagory` is added to the dataset. The `major_category` column contains generalizes the different majors into broader categories. This helps in reducing the number of unique majors and makes the dataset more manageable for analysis. The mapping of majors to categories is done using a mapping dictionary `major_mapv1.csv` , which is defined in the `map.py` file. The mapping is based on the most common majors and their corresponding categories.

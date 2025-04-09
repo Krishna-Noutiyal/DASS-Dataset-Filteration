@@ -3,8 +3,8 @@ This is the mapping dictionary for the major column
 """
 
 
-# Define a mapping dictionary
-major_map = {
+# Inital mapping dictionary
+major_mapv1 = {
     "Engineering": [
         "engineering",
         "mechanical",
@@ -107,3 +107,5 @@ major_map = {
     ],
     "Others": [],  # default fallback
 }
+
+
