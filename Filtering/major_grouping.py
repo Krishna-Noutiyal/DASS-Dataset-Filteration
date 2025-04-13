@@ -1,6 +1,6 @@
 import pandas as pd
 import re
-from map import major_mapv2, major_mapv3
+from map import major_mapv2, major_mapv3, major_mapv4  # Import the major_map from map.py
 
 
 def clean_input(text):
@@ -25,13 +25,15 @@ def categorize_major(major):
 
     # Check for exact matches first
     # for category, keywords in major_mapv2.items():
-    for category, keywords in major_mapv3.items():
+    # for category, keywords in major_mapv3.items():
+    for category, keywords in major_mapv4.items():
         if cleaned_major in keywords:
             return category
 
     # Then check for partial matches
     # for category, keywords in major_mapv2.items():
-    for category, keywords in major_mapv3.items():
+    # for category, keywords in major_mapv3.items():
+    for category, keywords in major_mapv4.items():
         if any(keyword in cleaned_major for keyword in keywords):
             return category
 
@@ -74,7 +76,8 @@ def process_majors_from_dataset(file_path, save_path="../filtered data/processed
 process_majors_from_dataset(
     "filtered data/dass_filtered_major_spec_rem.csv",
     # "filtered data/categorized_datav2.csv",
-    "filtered data/categorized_datav3.csv",
+    # "filtered data/categorized_datav3.csv",
+    "filtered data/categorized_datav4.csv",
 )
 
-print("Processing completed.")
+print("\033[1;32m\n\nProcessing completed.\033[0m\n\n")

@@ -1,6 +1,7 @@
 import re
-from map import major_mapv1, major_mapv2, major_mapv3  # Import the major_map from map.py
-# Load the major_map from map.py
+# from map import major_mapv1, major_mapv2, major_mapv3,  # Import the major_map from map.py
+from map import major_mapv4  # Import the major_map from map.py
+
 
 # Load the majors from major.txt
 with open("./Filtering/major.txt", "r", encoding="utf-8") as file:
@@ -17,7 +18,8 @@ normalized_majors = set(normalize_major(major) for major in majors)
 # Flatten the major_mapv1 keywords for comparison
 mapped_keywords = {}
 # for category, keywords_list in major_mapv1.items():
-for category, keywords_list in major_mapv3.items():
+# for category, keywords_list in major_mapv3.items():
+for category, keywords_list in major_mapv4.items():
     for keyword in keywords_list:
         mapped_keywords[keyword] = category
 
@@ -34,7 +36,8 @@ for major in normalized_majors:
 
 # Output results
 # with open("./Filtering/unmapedv2.txt", "w", encoding="utf-8") as file:
-with open("./Filtering/unmapedv3.txt", "w", encoding="utf-8") as file:
+# with open("./Filtering/unmapedv3.txt", "w", encoding="utf-8") as file:
+with open("./Filtering/unmapedv4.txt", "w", encoding="utf-8") as file:
     for major in unmapped_majors:
         file.write(major + "\n")
 print(f"Total unique majors in major.txt: {len(normalized_majors)}")
