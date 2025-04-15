@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the dataset
-file_path = "./categorized_v4/categorized_datav4_scored.csv"  # Replace with the actual dataset file name
+file_path = "dataset_with_scoring/categorized_v4/categorized_datav4_scored.csv"  # Replace with the actual dataset file name
 df = pd.read_csv(file_path)
 
 # Define a mapping for the `major_category` column
@@ -27,7 +27,7 @@ df['major_category'] = df['major_category'].map(major_category_mapping)
 df = df.drop(columns=['major'])
 
 # Save the updated dataset
-output_file_path = "./categorized_v4/categorized_v4_numeric.csv"  # Replace with the desired output file name
+output_file_path = "dataset_with_scoring/categorized_v4/categorized_v4_numeric.csv"  # Replace with the desired output file name
 df.to_csv(output_file_path, index=False)
 
 print("Dataset updated and saved successfully.")

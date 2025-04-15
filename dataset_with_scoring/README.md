@@ -7,19 +7,28 @@ This folder contains datasets that have been updated with additional scoring col
 1. **depression_score**: Represents the calculated depression score for each entry.
 2. **anxiety_score**: Represents the calculated anxiety score for each entry.
 3. **stress_score**: Represents the calculated stress score for each entry.
-4. **das_score**: Represents the combined DASS (Depression, Anxiety, Stress Scale) score for each entry. ( Its percentage of summation of depression_score, anxiety_score and stress_score ). Formula : upper(((depression_score + anxiety_score + stress_score) / 168) * 100)
+4. **das_score**: Represents the combined DASS (Depression, Anxiety, Stress Scale) score for each entry.  
+   **Formula**: `((depression_score + anxiety_score + stress_score) / 168) * 100`
 
-## Modification to `major_categorie` Column
+## Modification to `major_category` Column
 
-The `major_categorie` column, which previously contained categorical labels, has been converted into numerical values for easier processing. The mapping is as follows:
+The `major_category` column, which previously contained categorical labels, has been converted into numerical values for easier processing. The mapping is as follows:
 
-- `Depression` → `0`
-- `Anxiety` → `1`
-- `Stress` → `2`
-- `Normal` → `3`
+- "Computer Science": 1,
+- "Engineering": 2,
+- "Business": 3,
+- "Medical": 4,
+- "Arts": 5,
+- "Sciences": 6,
+- "Humanities": 7,
+- "Social Sciences": 8,
+- "Law": 9,
+- "Agriculture": 10,
+- "Military": 11,
+- "Others": 0
 
-These changes aim to enhance the usability of the dataset for analysis and machine learning tasks.
+## Script Description
 
-## Usage
-
-You can use this updated dataset for research and analysis involving mental health scoring and classification.
+1. **major_category_covertion.py**:
+   - Converts the text values in the `major_category` column to numerical values based on a predefined mapping.
+   - Removes the `major` column from the dataset.
